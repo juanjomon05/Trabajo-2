@@ -93,8 +93,7 @@ public class Main {
     // Método para cargar datos desde un archivo CSV.
     static void cargarArchivo() throws IOException {
         Pattern pattern = Pattern.compile(";");
-        String filename = "student-scores.csv";  // Asegúrate de que el archivo tenga este nombre
-
+        String filename = "student-scores.csv"; 
         try (Stream<String> lines = Files.lines(Path.of(filename))) {
             studentsList = lines.skip(1).map(line -> {
                 String[] arr = pattern.split(line);
